@@ -19,8 +19,8 @@
                 <div id="accordion" >
                       <h3>Categoria</h3>
                         <ul>
-                            <li><a href="index.php?link=2">Lista todos</a></li>
-                            <li><a href="index.php?link=3"> Cadastrar novo</a></li>
+                            <li><a href="{{ route('categoria.index') }}">Lista todos</a></li>
+                            <li><a href="{{ route('categoria.create') }}"> Cadastrar novo</a></li>
                         </ul>
                       <h3>Unidade</h3>
                         <ul>
