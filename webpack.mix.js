@@ -41,7 +41,7 @@ mix
 ], "public/assets/js/js.js")
 
 .scripts([
-    "resources/views/assets/js/chart.js/Chart.min.js"
+    "resources/views/assets/js/grafico.js"
 ], "public/assets/js/grafico.js")
 
 .scripts([
