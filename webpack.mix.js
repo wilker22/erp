@@ -11,5 +11,44 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix
+.styles([
+    "resources/views/assets/js/datatables/css/jquery.dataTables.min.css",
+    "resources/views/assets/js/datatables/css/responsive.dataTables.min.css",
+    "resources/views/assets/css/DataTables_boot.css",
+], "public/assets/css/datatables.css")
+
+.styles([
+    "resources/views/assets/css/auxiliar.css",
+    "resources/views/assets/css/grade.css",
+    "resources/views/assets/css/style.css",
+], "public/assets/css/app.css")
+
+.scripts([
+    "resources/views/assets/js/jquery.min.js"
+], "public/assets/js/jquery.js")
+
+.scripts([
+    "resources/views/assets/js/tinymce/tinymce.min.js",
+    "resources/views/assets/js/datatables/js/jquery.dataTables.min.js",
+    "resources/views/assets/js/datatables/js/dataTables.responsive.min.js",
+    "resources/views/assets/js/jquery.form.js",
+    "resources/views/assets/js/jquery.mask.js",
+], "public/assets/js/diversos.js")
+
+.scripts([
+    "resources/views/assets/js/js.js"
+], "public/assets/js/js.js")
+
+.scripts([
+    "resources/views/assets/js/chart.js/Chart.min.js"
+], "public/assets/js/grafico.js")
+
+.scripts([
+    "resources/views/assets/js/funcao.js"
+], "public/assets/js/funcao.js")
+
+.copyDirectory("resources/views/assets/js/datatables", "public/assets/js/datatables")
+.copyDirectory("resources/views/assets/js/tinymce", "public/assets/js/tinymce")
+.copyDirectory("resources/views/assets/js/chart.js", "public/assets/js/chart.js")
+.copyDirectory("resources/views/assets/img", "public/assets/img");
