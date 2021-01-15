@@ -10,7 +10,7 @@
                             <div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
                                 <span class="d-flex center-middle"><i class="far fa-list-alt mr-1"></i> Lista de categoria </span>
                                 <div>
-                                    <a href="index.php?link=3" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
+                                    <a href="{{ route('categoria.create') }}" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
                                     <a href="" class="btn btn-laranja filtro mx-1 d-inline-block"><i class="fas fa-filter"></i> Filtrar</a>
                                 </div>
                             </div>
@@ -61,8 +61,16 @@
                                             <td align="center">{{ $categoria->id }}</td>
                                             <td align="left">{{ $categoria->categoria }}</td>
 
-                                            <td align="center"><a href="{{ route('categoria.edit', $categoria->id) }}" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
-                                            <td align="center"><a href="{{ route('categoria.destroy', $categoria->id) }}"  onclick="return confirm('Confirma Exclusão?')" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
+                                            <td align="center">
+                                                <a href="{{ route('categoria.edit', $categoria->id) }}" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
+                                            </td>
+                                            <form action="{{ route('categoria.destroy', $categoria->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <td align="center">
+                                                    <button  onclick="return confirm('Confirma Exclusão?')" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</button>
+                                                </td>
+                                            </form>
                                         </tr>
 
                                     @endforeach

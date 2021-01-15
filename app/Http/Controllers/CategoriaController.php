@@ -42,7 +42,7 @@ class CategoriaController extends Controller
         $categoria->categoria = $request->input("categoria");
         $categoria->save();
 
-        return redirect('categoria.index');
+        return redirect()->route('categoria.index');
 
     }
 
@@ -99,9 +99,13 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        $categoria = Categoria::find($id)->delete();
-        Session::flash('message', 'Delete successfully!');
-        Session::flash('alert-class', 'alert-success');
+        $categoria = Categoria::find($id);
+        if($categoria){
+            $categoria->delete();
+        }
+
         return redirect()->route('categoria.index');
+
+
     }
 }
