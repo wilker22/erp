@@ -38,8 +38,8 @@
                       </ul>
                       <h3>Contato</h3>
                         <ul>
-                            <li><a href="index.php?link=10">Lista todos</a></li>
-                            <li><a href="index.php?link=11"> Cadastrar novo</a></li>
+                            <li><a href="{{ route('contato.index') }}">Lista todos</a></li>
+                            <li><a href="{{ route('contato.create') }}"> Cadastrar novo</a></li>
                         </ul>
                       <h3>Usuário</h3>
                         <ul>

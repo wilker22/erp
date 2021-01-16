@@ -14,7 +14,7 @@ class CreateContatosTable extends Migration
     public function up()
     {
         Schema::create('contatos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string("eh_cliente", 1);
             $table->string("eh_fornecedor", 1);
             $table->string("eh_transportador", 1);
