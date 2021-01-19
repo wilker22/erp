@@ -1,6 +1,6 @@
 <div class="col-9 central mb-3">
     <span class="p-2 bg-title text-light text-uppercase h5 mb-0 text-branco"><i class="fas fa-plus-circle"></i> Cadastrar contato</span>
-    
+
     <form action="" method="Post">
        <div id="tab">
           <ul>
@@ -19,12 +19,12 @@
                              </div>
                              <div><input type="checkbox" name="eh_fornecedor" class="form-control tipo" id="fornecedor" value="S"> <label class="p-2 mr-1" for="fornecedor"><i class="fas fa-cart-arrow-down"></i> Fornecedor</label>
                              </div>
-    
+
                              <div><input type="checkbox" name="eh_transportador" class="form-control tipo" id="transportador" value="S"> <label class="p-2" for="transportador"><i class="fas fa-truck"></i> Transportador</label>
                              </div>
                              </div>
                         </div>
-    
+
                     <div class="col-6 mb-3">
                             <label class="text-label">Nome</label>
                             <input type="text" name="nome" value="" placeholder="Digite aqui..." class="form-campo">
@@ -33,23 +33,23 @@
                             <label class="text-label">Nome Fantasia</label>
                             <input type="text" name="nome_fantasia" value="" class="form-campo">
                     </div>
-    
+
                     <div class="col-4 mb-3">
                             <label class="text-label">CPF</label>
                             <input type="text" name="cpf" value="" placeholder="Digite aqui..." class="form-campo">
                     </div>
-    
-    
+
+
                     <div class="col-4 mb-3">
                             <label class="text-label">CNPJ</label>
                             <input type="text" name="cnpj" value="" placeholder="Digite aqui..." class="form-campo">
                     </div>
-    
+
                     <div class="col-4 mb-3">
                             <label class="text-label">Data Cadastro</label>
                             <input type="date" name="data_cadastro" value="" placeholder="Digite aqui..." class="form-campo">
                     </div>
-    
+
                     <div class="col-8 mb-3">
                             <label class="text-label">E-mail</label>
                             <input type="text" name="email" value="" placeholder="Digite aqui..." class="form-campo">
@@ -58,7 +58,7 @@
                             <label class="text-label">Senha</label>
                             <input type="password" name="senha" value="" placeholder="Digite aqui..." class="form-campo">
                     </div>
-    
+
                     <div class="col-1 mb-3">
                             <label class="text-label">DDD:</label>
                             <input type="text" name="ddd" value="" placeholder="Digite aqui..." class="form-campo">
@@ -78,12 +78,12 @@
                                 <option value="N">Não</option>
                         </select>
                     </div>
-    
-    
+
+
                 </div>
             </div>
           </div>
-    
+
           <div id="tab-2">
             <div class="p-2">
             <span class="d-block mt-4 h4 border-bottom text-uppercase">Endereço</span>
@@ -108,7 +108,7 @@
                     <label class="text-label">CEP</label>
                      <div class="input-grupo">
                      <input type="text" value="" name="cep" id="cep" placeholder="Digite aqui..." class="form-campo">
-    
+
                      </div>
                 </div>
                 <div class="col-3 mb-2">
@@ -126,7 +126,7 @@
                     </div>
             </div>
           </div>
-    
+
             <div id="tab-3">
             <div class="p-2">
                 <span class="d-block mt-4 h4 border-bottom text-uppercase">Informações Adicionais</span>
@@ -143,7 +143,7 @@
                             <label class="text-label">Suframa</label>
                             <input type="text" name="suframa" value="" placeholder="Digite aqui..." class="form-campo">
                     </div>
-    
+
                     <div class="col-4 mb-3">
                              <label class="text-label">RG</label>
                              <input type="text" name="rg" value="" placeholder="Digite aqui..." class="form-campo">
@@ -156,7 +156,7 @@
                              <label class="text-label">IE Subst. Trib.</label>
                              <input type="text" name="ie_subt_trib" value="" placeholder="Digite aqui..." class="form-campo">
                      </div>
-    
+
                      </div>
              </div>
              </div>
@@ -168,4 +168,3 @@
         </div>
     </form>
     </div>
-    
