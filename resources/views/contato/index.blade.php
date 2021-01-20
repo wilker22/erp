@@ -1,10 +1,14 @@
+@extends('template')
+
+@section('conteudo')
+
 <div class="col-9 central mb-3">
     <div class="rows">
                 <div class="col-12">
                <div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
                     <span class="d-flex center-middle"><i class="far fa-list-alt mr-1"></i> Lista de contato </span>
                     <div>
-                        <a href="index.php?link=11" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
+                        <a href="{{ route('contato.create') }}" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
                         <a href="" class="btn btn-laranja filtro mx-1 d-inline-block"><i class="fas fa-filter"></i> Filtrar</a>
                     </div>
                 </div>
@@ -56,38 +60,23 @@
                                         <th align="center">Id</th>
                                         <th align="center">Nome</th>
                                         <th align="center">Email</th>
-                                        <th align="center">Fone</th>
+                                        <th align="center">Telefone</th>
                                         <th align="center">Ação</th>
                                 </tr>
                         </thead>
                         <tbody>
+                            @foreach ($contatos as $contato)
                             <tr>
-                               <td align="center">1</td>
-                               <td align="left">Acre</td>
-                                <td align="left">AC</td>
-                                <td align="left">12</td>
-                               <td align="center">
-                                    <a href="index.php?link=9" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                               <td align="center">1</td>
-                               <td align="left">Acre</td>
-                                <td align="left">AC</td>
-                                <td align="left">12</td>
-                               <td align="center">
-                                    <a href="index.php?link=9" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                               <td align="center">1</td>
-                               <td align="left">Acre</td>
-                                <td align="left">AC</td>
-                                <td align="left">12</td>
-                               <td align="center">
-                                    <a href="index.php?link=9" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
-                                </td>
-                            </tr>
+                                <td align="center">{{ $contato->id }}</td>
+                                <td align="left">{{ $contato->nome }}</td>
+                                 <td align="left">{{ $contato->email }}</td>
+                                 <td align="left">{{ $contato->celular }}</td>
+                                <td align="center">
+                                     <a href="index.php?link=9" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
+                                 </td>
+                             </tr>
+                            @endforeach
+
                         </tbody>
                 </table>
         </div>
@@ -110,3 +99,4 @@
 
             </div>
         </div>
+@endsection

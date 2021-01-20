@@ -1,3 +1,7 @@
+@extends('template')
+
+@section('conteudo')
+
 <div class="col-9 central mb-3">
     <span class="p-2 bg-title text-light text-uppercase h5 mb-0 text-branco"><i class="fas fa-plus-circle"></i> Cadastrar contato</span>
 
@@ -168,3 +172,4 @@
         </div>
     </form>
     </div>
+@endsection

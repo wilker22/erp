@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contato;
+use App\Http\Requests\ContatoRequest;
 use Illuminate\Http\Request;
 
 class ContatoController extends Controller
@@ -34,9 +35,10 @@ class ContatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContatoRequest $request)
     {
-        //
+        Contato::create($request->all());
+        return redirect()->route('contato.index');
     }
 
     /**
