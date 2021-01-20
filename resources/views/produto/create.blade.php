@@ -10,7 +10,12 @@
         @endforeach
     </ul>
 
-    <form action="{{ route('produto.store') }}" method="post" enctype="multipart/form-data">
+    @if(isset($produto))
+        <form action="{{ route('produto.update', $produto->id) }}" method="POST" enctype="multipart/form-data">
+        @method('PUT')
+    @else
+        <form action="{{ route('produto.store') }}" method="POST" enctype="multipart/form-data">
+    @endif
         @csrf
         <div class="rows p-4">
                  <div class="col-4">

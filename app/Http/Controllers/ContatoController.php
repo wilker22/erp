@@ -38,6 +38,8 @@ class ContatoController extends Controller
     public function store(ContatoRequest $request)
     {
         Contato::create($request->all());
+
+
         return redirect()->route('contato.index');
     }
 

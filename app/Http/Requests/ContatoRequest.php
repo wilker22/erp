@@ -24,29 +24,20 @@ class ContatoRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required',
-            'eh_cliente' => 'required',
-            'eh_fornecedor' => 'required',
-            'eh_transportador' => 'required',
+
+
             'nome' => 'required',
-            'nome_fantasia' => 'required',
+
             'cpf' => 'required',
             'cnpj'=> 'required',
             'data_cadastro'=> 'required',
             'ativo'=> 'required',
             'ddd'=> 'required',
-            'fone'=> 'required',
+
             'celular'=> 'required',
             'email'=> 'required',
             'senha'=> 'required',
-            'cep'=> 'required',
-            'logradouro'=> 'required',
-            'numero'=> 'required',
-            'uf'=> 'required',
-            'cidade'=> 'required',
-            'complemento'=> 'required',
-            'bairro'=> 'required',
-            'rg' => 'required'
+
         ];
     }
 }
