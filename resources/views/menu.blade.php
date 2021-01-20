@@ -49,7 +49,7 @@
                         </ul>
                       <h3>Diversos</h3>
                       <ul>
-                            <li><a href="lst-categoria.html">Tipo de movimento </a></li>
+                            <li><a href="{{ route('tipomovimento.index') }}">Tipo de movimento </a></li>
                             <li><a href="lst-categoria.html">Status entrega </a></li>
                             <li><a href="lst-categoria.html">Status cotação </a></li>
                             <li><a href="lst-categoria.html">Status item cotação </a></li>

@@ -72,7 +72,7 @@
                                  <td align="left">{{ $contato->email }}</td>
                                  <td align="left">{{ $contato->celular }}</td>
                                 <td align="center">
-                                     <a href="index.php?link=9" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
+                                     <a href="{{ route('contato.edit', $contato->id )}}" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>
                                  </td>
                              </tr>
                             @endforeach

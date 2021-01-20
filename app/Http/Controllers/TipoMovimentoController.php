@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Contato;
-use App\Http\Requests\ContatoRequest;
+use App\TipoMovimento;
 use Illuminate\Http\Request;
 
-class ContatoController extends Controller
+class TipoMovimentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,9 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        $contatos = Contato::all();
-        return view('contato.index', compact('contatos'));
+        $tipomovimentos = TipoMovimento::all();
+
+        return view('tipomovimento.index', compact('tipomovimentos'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ContatoController extends Controller
      */
     public function create()
     {
-        return view('contato.create');
+        return view('tipomovimento.create');
     }
 
     /**
@@ -35,12 +35,10 @@ class ContatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContatoRequest $request)
+    public function store(Request $request)
     {
-        Contato::create($request->all());
-
-
-        return redirect()->route('contato.index');
+        TipoMovimento::create($request->all());
+        return redirect()->route('tipomovimento.index');
     }
 
     /**
@@ -62,11 +60,11 @@ class ContatoController extends Controller
      */
     public function edit($id)
     {
-        $contato = Contato::find($id);
-        if(!$contato){
-            redirect()->route('contato.index');
+        $tipomovimento = TipoMovimento::find($id);
+        if(!$tipomovimento){
+            return redirect()->route('tipomovimento.index')->with('error', "Tipo não encontrado!");
         }
-        return view('contato.create', compact('contato'));
+        return view('tipomovimento.create', compact($tipomovimento));
     }
 
     /**
@@ -76,20 +74,19 @@ class ContatoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ContatoRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $contato = Contato::find($id);
-        if(!$contato){
-            redirect()->route('contato.index');
+        $tipomovimento = TipoMovimento::find($id);
+        if(!$tipomovimento){
+            redirect()->route('tipomovimento.index');
         }
 
-        $update = $contato->update($request->all());
+        $update = $tipomovimento->update($request->all());
         if(!$update){
             return redirect()->back()->with('error', "Ocorreu erro ao Atualizar!");
 
         }
-        return redirect()->route('contato.index')->with('success', "Atualizado com sucesso");
-
+        return redirect()->route('tipomovimento.index')->with('success', "Atualizado com sucesso");
     }
 
     /**
@@ -100,6 +97,12 @@ class ContatoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tipomovimento = TipoMovimento::find($id);
+        if(!$tipomovimento){
+            return redirect()->back()->with('error', "Ocorreu erro ao Atualizar!");
+        }
+        $tipomovimento->delete();
+
+        return redirect()->route('tipomovimento.index')->with('success', "Atualizado com sucesso");
     }
 }
