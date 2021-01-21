@@ -15,8 +15,8 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('categoria_id');
-            $table->bigInteger('unidade_id');
+            $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('unidade_id');
             $table->string("produto", 255);
             $table->string("eh_produto", 1)->nullable();
             $table->string("eh_insumo", 1)->nullable();
@@ -47,8 +47,16 @@ class CreateProdutosTable extends Migration
             $table->integer('nfci')->nullable();
             $table->timestamps();
 
-            $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->foreign('unidade_id')->references('id')->on('unidades');
+
+            $table->foreign('categoria_id')
+                            ->references('id')
+                            ->on('categorias')
+                            ->onDelete('cascade');
+
+            $table->foreign('unidade_id')
+                            ->references('id')
+                            ->on('unidades')
+                            ->onDelete('cascade');
 
 
         });

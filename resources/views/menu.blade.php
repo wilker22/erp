@@ -84,8 +84,11 @@
             <li><a href="index.php?link=31">Todos os Pedido</a></li>
 
             <small><b>Movimentações</b></small>
+            <li><a href="{{ route('localizacao.index') }}">Localização</a></li>
+            <li><a href="{{ route('produtolocalizacao.index') }}">Produto/Localização</a></li>
             <li><a href="index.php?link=25">Historico de movimento</a></li>
             <li><a href="index.php?link=26">Extrado produto</a></li>
+
         </ul>
     </nav>
 
