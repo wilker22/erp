@@ -8,6 +8,7 @@ class Entrada extends Model
 {
     protected $fillable = [
         'produto_id',
+        'localizacao_id',
         'qtde_entrada',
         'valor_entrada',
         'subtotal_entrada',
@@ -18,6 +19,8 @@ class Entrada extends Model
     {
         return self::where('data_entrada', $data)
                     ->join('produtos', 'produtos.id', '=', 'entradas.produto_id')
+                    ->join('localizacaos', 'localizacaos.id', '=', 'entradas.localizacao_id')
+                    ->select('localizacaos.localizacao', 'produtos.produto', 'entradas.*')
                     ->get();
     }
 

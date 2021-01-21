@@ -89,6 +89,7 @@
                                             <th align="center">ID</th>
                                             <th align="center">Data</th>
                                             <th align="left" width="290">Produto</th>
+                                            <th align="center">Localização</th>
                                             <th align="center">Qtde</th>
                                             <th align="center">Valor</th>
                                             <th align="center">Subtotal</th>
@@ -101,6 +102,7 @@
                                                 <td align="center">{{ $entrada->id }}</td>
                                                 <td align="center">{{ $entrada->data_entrada }}</td>
                                                 <td align="center">{{ $entrada->produto }}</td>
+                                                <td align="center">{{ $entrada->localizacao }}</td>
                                                 <td align="center">{{ $entrada->qtde_entrada }}</td>
                                                 <td align="center">{{ $entrada->valor_entrada }}</td>
                                                 <td align="center">{{ $entrada->subtotal_entrada }}</td>
@@ -108,7 +110,7 @@
                                           @endforeach
 
                                            <tr>
-                                               <td align="right" colspan="6"><b>Total:</b> <span class="text-verde minimo-font" id="total_entrada">R$ {{ $soma }}</span></td>
+                                               <td align="right" colspan="7"><b>Total:</b> <span class="text-verde minimo-font" id="total_entrada">R$ {{ $soma }}</span></td>
                                           </tr>
                                       </tbody>
                                   </table>

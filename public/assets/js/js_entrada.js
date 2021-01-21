@@ -11,6 +11,7 @@ $(function () {
         var id = $("#id_produto").val();
         var preco = $("#preco").val();
         var qtde = $("#qtde").val();
+        var localizacao_id = $("#localizacao_id").val();
 
         $.ajax({
             url: base_url + 'entrada',
@@ -20,6 +21,7 @@ $(function () {
                 produto_id: id,
                 qtde_entrada: qtde,
                 valor_entrada: preco,
+                localizacao_id: localizacao_id,
                 subtotal_entrada: qtde * preco
 
             },
@@ -108,12 +110,13 @@ function lista_entradas(data){
         html += '<td align="center">' + data[i].id + '</td>' +
                 '<td align="center">' + data[i].data_entrada + '</td>' +
                 '<td align="center">' + data[i].produto + '</td>' +
+                '<td align="center">' + data[i].localizacao + '</td>' +
                 '<td align="center">' + data[i].qtde_entrada + '</td>' +
                 '<td align="center">' + data[i].valor_entrada + '</td>' +
                 '<td align="center">' + data[i].subtotal_entrada + '</td></tr>'
     }
     total = total_entrada.toFixed(2).replace(".",",");
-    html += '<tr><td align="right" colspan="6"><b>Total:</b> <span class="text-verde minimo-fonte" id="total_entrada"> R$' + total + '</span></td></tr>'
+    html += '<tr><td align="right" colspan="7"><b>Total:</b> <span class="text-verde minimo-fonte" id="total_entrada"> R$' + total + '</span></td></tr>'
     $("#lista_entradas").html(html);
 }
 
