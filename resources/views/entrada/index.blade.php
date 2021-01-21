@@ -51,7 +51,7 @@
                   <div class="col-12 mb-3">
                   <div class="border p-3 radius-4 pb-4">
                       <div class="rows">
-                          <div class="col-6 position-relative">
+                          <div class="col-4 position-relative">
                               <label class="text-label">Produto</label>
                               <input type="text" name="produto" id="produto" value="" class="form-campo">
 
@@ -60,10 +60,17 @@
                               <label class="text-label">Valor</label>
                               <input type="text" name="preco" id="preco" value="" class="form-campo">
                           </div>
-                          <div class="col-2">
+                          <div class="col-1">
                               <label class="text-label">Qtde</label>
                               <input type="text" name="qtde" id="qtde" value="" class="form-campo">
                           </div>
+
+                          <div class="col-3">
+                            <label class="text-label">Localização</label>
+                            <select name="localizacao" id="localizacao_id" class="form-campo">
+
+                            </select>
+                        </div>
 
                           <div class="col-2 mt-1 pt-1">
                               <input type="hidden" id="id_produto" name="id_produto">

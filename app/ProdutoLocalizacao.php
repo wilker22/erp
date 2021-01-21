@@ -19,4 +19,6 @@ class ProdutoLocalizacao extends Model
 
         return $lista;
     }
+
+
 }

@@ -67,6 +67,23 @@ $(function () {
 
 });
 
+function lista_localizacao(id_produto){
+    $.ajax({
+       url: base_url + 'produtolocalizacao/listaPorProduto/' + id_produto,
+        type: 'GET',
+        dataType: 'json',
+        data: {},
+        success: function(data){
+            html ="";
+            for(i=0; i < data.length; i++){
+                html += "<option value='" + data[i].id + "'>" + data[i].localizacao + "</option>";
+            }
+
+            $("#localizacao_id").html(html);
+
+        }
+    });
+}
 
 function selecionarProduto(obj){
     var id = $(obj).attr('data-id');
@@ -79,6 +96,8 @@ function selecionarProduto(obj){
     $("#preco").val(preco);
     $("#qtde").val(1);
     $("#qtde").focus();
+
+    lista_localizacao(id)
 }
 
 function lista_entradas(data){

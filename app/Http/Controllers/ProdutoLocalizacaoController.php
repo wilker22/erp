@@ -6,6 +6,7 @@ use App\Localizacao;
 use App\Produto;
 use App\ProdutoLocalizacao;
 use Illuminate\Http\Request;
+use Psy\CodeCleaner\FunctionContextPass;
 
 class ProdutoLocalizacaoController extends Controller
 {
@@ -21,6 +22,18 @@ class ProdutoLocalizacaoController extends Controller
         $pl =  new ProdutoLocalizacao();
         $lista = $pl->lista();
         return view('produtolocalizacao.create', compact('produtos', 'locais', 'lista'));
+    }
+
+    public function listaPorProduto($id_produto)
+    {
+        $lista = ProdutoLocalizacao::where('produto_id', $id_produto)
+                        ->join('localizacaos',
+                               'produto_localizacaos.localizacao_id',
+                               '=',
+                               'localizacaos.id')->get();
+                      //  dd($lista);
+        return response()->json($lista);
+
     }
 
     /**
@@ -95,4 +108,6 @@ class ProdutoLocalizacaoController extends Controller
     {
         //
     }
+
+
 }

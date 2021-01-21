@@ -11,6 +11,7 @@ Route::resource('/produto', 'ProdutoController');
 Route::resource('/contato', 'ContatoController');
 Route::resource('/tipomovimento', 'TipoMovimentoController');
 Route::resource('/localizacao', 'LocalizacaoController');
+Route::get('/produtolocalizacao/listaPorProduto/{id}', 'ProdutoLocalizacaoController@listaPorProduto');
 Route::resource('/produtolocalizacao', 'ProdutoLocalizacaoController');
 Route::resource('/entrada', 'EntradaController');
 
