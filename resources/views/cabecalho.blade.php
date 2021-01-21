@@ -6,7 +6,7 @@
 		<li><a href="#" class="text-uppercase"><i class="fas fa-lock"></i> Login</a></li>
 		<li>
 			<img src="{{ asset('assets/img/foto01.png') }}" class="img-user">
-			<span class="text-dark">Manoel jailton</span>
+			<span class="text-dark">WTech - Consultoria de TI</span>
 		</li>
 	</ul>
 </div>

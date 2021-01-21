@@ -58,15 +58,16 @@
                           </div>
                           <div class="col-2">
                               <label class="text-label">Valor</label>
-                              <input type="text" name="" value="" class="form-campo">
+                              <input type="text" name="preco" id="preco" value="" class="form-campo">
                           </div>
                           <div class="col-2">
                               <label class="text-label">Qtde</label>
-                              <input type="text" name="" value="" class="form-campo">
+                              <input type="text" name="qtde" id="qtde" value="" class="form-campo">
                           </div>
 
                           <div class="col-2 mt-1 pt-1">
-                             <input type="submit" value="Inserir" class="btn btn-verde width-100">
+                              <input type="hidden" id="id_produto" name="id_produto">
+                             <input type="button" value="Inserir" id="btnInserirEntrada" class="btn btn-verde width-100">
                           </div>
                       </div>
                       </div>
@@ -86,7 +87,7 @@
                                             <th align="center">Subtotal</th>
                                           </tr>
                                       </thead>
-                                      <tbody id="lista_solicitacao">
+                                      <tbody id="lista_entradas">
 
                                           @foreach ($lista as $entrada)
                                             <tr>

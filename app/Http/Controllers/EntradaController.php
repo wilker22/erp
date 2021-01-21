@@ -37,7 +37,13 @@ class EntradaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $req = $request->all();
+        $req['data_entrada'] = date('Y-m-d');
+        Entrada::create($req);
+
+        $lista = Entrada::lista(date('Y-m-d'));
+
+        return response()->json($lista);
     }
 
     /**
