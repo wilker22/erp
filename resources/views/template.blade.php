@@ -10,7 +10,13 @@
 		<link rel="stylesheet" href="{{ url(mix('assets/css/app.css')) }}">
 
 		<!--font icones-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <script>
+            var base_url = "{{ asset('')}}";
+            var _token = "{{csrf_token()}}";
+        </script>
+
 	</head>
 
 <body>
@@ -25,7 +31,8 @@
 </div>
 	<script src="{{ url(mix('assets/js/jquery.js')) }}"></script>
 	<script src="{{ url(mix('assets/js/diversos.js')) }}"></script>
-	<script src="{{ url(mix('assets/js/js.js')) }}"></script>
+    <script src="{{ url(mix('assets/js/js.js')) }}"></script>
+    <script src="{{ url(mix('assets/js/js_entrada.js')) }}"></script>
 
 
 	<!-- Graphs -->

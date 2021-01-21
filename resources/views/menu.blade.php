@@ -78,7 +78,7 @@
         <ul class="menu-lista">
             <li class="icones"><a href="" title="Recolher menu"><i class="fas fa-arrow-left ativo"></i></a></li>
             <h1 class="tt px-2"><b><i class="fas fa-cubes"></i> Estoque</b></h1>
-            <li><a href="index.php?link=22">Entradas avulsas</a></li>
+            <li><a href="{{ route('entrada.index') }}">Entradas avulsas</a></li>
 
             <small><b>Saídas</b></small>
             <li><a href="index.php?link=31">Todos os Pedido</a></li>
