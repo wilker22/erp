@@ -74,7 +74,7 @@
 
                           <div class="col-2 mt-1 pt-1">
                               <input type="hidden" id="id_produto" name="id_produto">
-                             <input type="button" value="Inserir" id="btnInserirEntrada" class="btn btn-verde width-100">
+                             <input type="button" value="Inserir" id="btnInserirSaida" class="btn btn-verde width-100">
                           </div>
                       </div>
                       </div>
@@ -95,22 +95,22 @@
                                             <th align="center">Subtotal</th>
                                           </tr>
                                       </thead>
-                                      <tbody id="lista_entradas">
+                                      <tbody id="lista_saidas">
 
                                           @foreach ($lista as $saida)
                                             <tr>
                                                 <td align="center">{{ $saida->id }}</td>
-                                                <td align="center">{{ $saida->data_entrada }}</td>
+                                                <td align="center">{{ $saida->data_saida }}</td>
                                                 <td align="center">{{ $saida->produto }}</td>
                                                 <td align="center">{{ $saida->localizacao }}</td>
-                                                <td align="center">{{ $saida->qtde_entrada }}</td>
-                                                <td align="center">{{ $saida->valor_entrada }}</td>
-                                                <td align="center">{{ $saida->subtotal_entrada }}</td>
+                                                <td align="center">{{ $saida->qtde_saida }}</td>
+                                                <td align="center">{{ $saida->valor_saida }}</td>
+                                                <td align="center">{{ $saida->subtotal_saida }}</td>
                                             </tr>
                                           @endforeach
 
                                            <tr>
-                                               <td align="right" colspan="7"><b>Total:</b> <span class="text-verde minimo-font" id="total_entrada">R$ {{ $soma }}</span></td>
+                                               <td align="right" colspan="7"><b>Total:</b> <span class="text-verde minimo-font" id="total_saida">R$ {{ $soma }}</span></td>
                                           </tr>
                                       </tbody>
                                   </table>
