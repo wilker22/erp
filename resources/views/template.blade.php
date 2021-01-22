@@ -33,6 +33,8 @@
 	<script src="{{ url(mix('assets/js/diversos.js')) }}"></script>
     <script src="{{ url(mix('assets/js/js.js')) }}"></script>
     <script src="{{ url(mix('assets/js/js_entrada.js')) }}"></script>
+    <script src="{{ url(mix('assets/js/js_saida.js')) }}"></script>
+
 
 
 	<!-- Graphs -->

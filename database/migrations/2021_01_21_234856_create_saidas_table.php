@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntradasTable extends Migration
+class CreateSaidasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateEntradasTable extends Migration
      */
     public function up()
     {
-        Schema::create('entradas', function (Blueprint $table) {
+        Schema::create('saidas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produto_id');
             $table->unsignedBigInteger('localizacao_id');
-            $table->integer('qtde_entrada')->default(1);
-            $table->decimal('valor_entrada', 10,2)->default(0,00);
-            $table->decimal('subtotal_entrada', 10,2);
-            $table->date('data_entrada');
+            $table->integer('qtde_saida')->default(1);
+            $table->decimal('valor_saida', 10,2)->default(0,00);
+            $table->decimal('subtotal_saida', 10,2);
+            $table->date('data_saida');
             $table->timestamps();
 
             $table->foreign('produto_id')->references('id')->on('produtos');
@@ -34,6 +34,6 @@ class CreateEntradasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entradas');
+        Schema::dropIfExists('saidas');
     }
 }

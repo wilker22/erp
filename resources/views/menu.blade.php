@@ -81,7 +81,7 @@
             <li><a href="{{ route('entrada.index') }}">Entradas avulsas</a></li>
 
             <small><b>Saídas</b></small>
-            <li><a href="index.php?link=31">Todos os Pedido</a></li>
+            <li><a href="{{ route('saida.index')}}">Saídas</a></li>
 
             <small><b>Movimentações</b></small>
             <li><a href="{{ route('localizacao.index') }}">Localização</a></li>

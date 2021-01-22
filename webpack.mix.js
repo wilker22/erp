@@ -45,6 +45,10 @@ mix
 ], "public/assets/js/js_entrada.js")
 
 .scripts([
+    "resources/views/assets/js/js_saida.js"
+], "public/assets/js/js_saida.js")
+
+.scripts([
     "resources/views/assets/js/grafico.js"
 ], "public/assets/js/grafico.js")
 
