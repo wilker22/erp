@@ -15,4 +15,5 @@ Route::get('/produtolocalizacao/listaPorProduto/{id}', 'ProdutoLocalizacaoContro
 Route::resource('/produtolocalizacao', 'ProdutoLocalizacaoController');
 Route::resource('/entrada', 'EntradaController');
 Route::resource('/saida', 'SaidaController');
+Route::resource('/movimento', 'MovimentoController');
 
