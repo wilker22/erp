@@ -10,6 +10,7 @@
       </div>
   </div>
   <form action="" method="Post">
+      @csrf
       <div class="rows">
 
           <div class="col-12 mb-3">

@@ -20,5 +20,15 @@ class ProdutoLocalizacao extends Model
         return $lista;
     }
 
+    public static function atualizarEstoque($id_produto, $id_localizacao, $qtde)
+    {
+        $sql = "UPDATE produto_localizacaos
+                SET estoque = estoque + ($qtde)
+                WHERE produto_id = $id_produto
+                AND localizacao_id = $id_localizacao";
+
+        DB::update($sql);
+    }
+
 
 }

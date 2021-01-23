@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Produto extends Model
 {
@@ -16,5 +17,29 @@ class Produto extends Model
 
     ];
 
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function unidade()
+    {
+        return $this->belongsTo(Unidade::class);
+    }
+
+    public function lista_insumo()
+    {
+        return self::where(`eh_insumo`, `S`)->get();
+    }
+
+    public static function atualizarEstoque($id_produto, $qtde)
+    {
+        $sql = "UPDATE produtos
+        SET estoque_atual = estoque_atual + estoque_atual + ($qtde),
+            estoque_real = estoque_real + estoque_real + ($qtde)
+        WHERE id = $id_produto";
+
+        DB::update($sql);
+    }
 
 }

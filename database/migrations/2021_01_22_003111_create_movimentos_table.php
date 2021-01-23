@@ -24,7 +24,7 @@ class CreateMovimentosTable extends Migration
             $table->unsignedBigInteger('saida_id')->nullable();
             $table->unsignedBigInteger('ordem_producao_id')->nullable();
             $table->string('ent_sai', 1);
-            $table->integer('data_movimento');
+            $table->date('data_movimento');
             $table->integer('qtde_movimento');
             $table->decimal('valor_movimento', 10,2)->default(0.00);
             $table->decimal('subtotal_movimento', 10,2)->default(0.00);

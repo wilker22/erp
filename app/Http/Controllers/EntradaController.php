@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Entrada;
 use App\Movimento;
+use App\Produto;
+use App\ProdutoLocalizacao;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EntradaController extends Controller
 {
@@ -42,7 +45,11 @@ class EntradaController extends Controller
         $req['data_entrada'] = date('Y-m-d');
         $entrada =  Entrada::create($req);
 
-        //operações na tabela de Movimentações
+        $mov_anterior = Movimento::where('produto_id', $entrada->produto_id)
+                                   ->orderBy('id', 'desc')
+                                   ->first();
+        $saldo_anterior = isset($mov_anterior->saldoestoque) ? $mov_anterior->saldoestoque : 0;
+
         $mov = new Movimento();
         $mov->localizacao_id        = $entrada->localizacao_id;
         $mov->tipo_movimento_id     = 1;
@@ -54,9 +61,11 @@ class EntradaController extends Controller
         $mov->valor_movimento       = $entrada->valor_entrada;
         $mov->subtotal_movimento    = $entrada->subtotal_entrada;
         $mov->descricao = "Entrada Num.: " . $entrada->id;
-        $mov->saldoestoque          = 0;
-
+        $mov->saldoestoque          = $saldo_anterior + $entrada->qtde_entrada;
         $mov->save();
+
+        Produto::atualizarEstoque($entrada->produto_id, $entrada->qtde_entrada);
+        ProdutoLocalizacao::atualizarEstoque($entrada->produto_id, $entrada->localizacao_id, $entrada->qtde_entrada);
 
         $lista = Entrada::lista(date('Y-m-d'));
 
