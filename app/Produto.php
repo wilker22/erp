@@ -42,4 +42,9 @@ class Produto extends Model
         DB::update($sql);
     }
 
+    public static function listaInsumos()
+    {
+        return self::where("eh_insumo", "S")->get();
+    }
+
 }

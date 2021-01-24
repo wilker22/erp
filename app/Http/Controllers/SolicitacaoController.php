@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Produto;
 use App\Solicitacao;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,11 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
-        $solicitacoes = Solicitacao::listaSolicitacaoPorStatus(1);
-        dd($solicitacoes);
 
-        return view('solicitacao.index', compact('solicitacoes'));
+        $solicitacoes = Solicitacao::listaSolicitacaoPorStatus(1);
+        $insumos = Produto::listaInsumos();
+       //dd($solicitacoes);
+        return view('solicitacao.index', compact('solicitacoes', 'insumos'));
     }
 
     /**
@@ -38,7 +40,11 @@ class SolicitacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $req = $request->all();
+        Solicitacao::create($req);
+
+        return redirect('solicitacao');
+
     }
 
     /**
@@ -83,6 +89,11 @@ class SolicitacaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $solicitacao = Solicitacao::find($id);
+        if($solicitacao){
+            $solicitacao->delete();
+        }
+
+        return redirect()->route('solicitacao.index');
     }
 }

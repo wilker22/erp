@@ -14,14 +14,14 @@
 						</div>
 					</div>
 
-					<form name="busca" action="template_2.php?link=1" method="post">
+					<form name="busca" id="busca" action="template_2.php?link=1" method="post">
                         <div class="px-2 pt-2">
 							<div class="d-flex text-end">
 								<button class="btn btn-roxo mx-1 text-branco" type="submit"><i class="fas fa-arrow-alt-circle-right"></i> Fazer cotação em massa</button>
 
 							</div>
 					</form>
-					<form name="busca" action="" method="post">
+					<form name="busca2" id="busca2" action="" method="post">
 							  <div class="mostraFiltro bg-padrao mt-2 p-2 radius-4">
 							  <div class="rows">
                                         <div class="col-2">
@@ -67,27 +67,37 @@
 									<th align="center">Marcar</th>
 									<th align="center">Id</th>
 									<th align="left">Produto</th>
-									<th align="center">Data Entrega</th>
 									<th align="center">Data Solicitação</th>
 									<th align="center">Status</th>
 									<th align="center">Qtde</th>
-									<th align="center">Usuario</th>
-									<th align="center">Editar</th>
+
+
 									<th align="center">Excluir</th>
 								</tr>
                             </thead>
                             <tbody>
-                             <tr>
-                                <td align="center"><input type="checkbox" name="" value=""></td>
-                                <td align="center">1</td>
-								<td align="left">Panela cabo grande</td>
-								<td align="center">20/08/2019</td>
-								<td align="center">20/08/2019</td>
-								<td align="center">Em aberto</td>
-								<td align="center">50</td>
-								<td align="center">mjailton</td>
-                                <td align="center"> <a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a></td>
-                                <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a> </td>
+                                @foreach ($solicitacoes as $solicitacao)
+                                    <tr>
+                                        <td align="center"><input type="checkbox" name="" value=""></td>
+                                        <td align="center">{{ $solicitacao->id }}</td>
+                                        <td align="left">{{ $solicitacao->produto }}</td>
+                                        <td align="center">{{ $solicitacao->data_solicitacao }}</td>
+                                        <td align="center">{{ $solicitacao->status_solicitacao }}</td>
+                                        <td align="center">{{ $solicitacao->qtde }}</td>
+
+                                        <form action="{{ route('solicitacao.destroy', $solicitacao->id) }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <td align="center">
+                                                <div class="form-group">
+                                                  <input type="submit" class="d-inline-block btn btn-outline-vermelho btn-pequeno" name="btnDeleta" value="DELETAR">
+                                                </div>
+
+                                        </form>
+
+                                    </tr>
+
+                                @endforeach
 
 
                         </tbody>
@@ -124,12 +134,16 @@
 				<a href="" class="fechar">x</a>
 			</span>
 			<div class="p-5">
-                            <form action="http://comoaprenderphp.com.br/projeto/erp/erp/solicitacao/inserir " method="POST">
+                            <form  name="salvarSolicitacao" id="salvarSolicitacao" action="{{ route('solicitacao.store') }}" method="POST">
+                                @csrf
                             <div class="rows  py-3 px-5">
                                     <div class="col-12">
                                         <label class="text-label">Produto</label>
-                                        <select class="form-campo" name="id_produto" id="id_produto">
-                                                                                    </select>
+                                        <select class="form-campo" name="produto_id" id="produto_id">
+                                            @foreach ($insumos as $produto)
+                                                <option value="{{ $produto->id }}">{{ $produto->produto }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col-8">
                                             <label class="text-label">Data da Entrega</label>
@@ -142,6 +156,8 @@
                                        <input type="text" name="qtde" value="1" id="qtde" placeholder="Digite aqui..." class="form-campo">
                                     </div>
                                     <div class="col-12 mt-4">
+                                        <input type="hidden" name="data_solicitacao" value="{{ date('Y-m-d') }}">
+                                        <input type="hidden" name="hora_solicitacao" value="{{ date('H:i:s') }}">
                                         <input type="submit" value="Salvar alterações" id="btnInserir" class="btn btn-verde btn-medio d-block m-auto">
                                    </div>
 

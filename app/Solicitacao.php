@@ -7,6 +7,18 @@ use Illuminate\Support\Facades\DB;
 
 class Solicitacao extends Model
 {
+
+    protected $fillable = [
+        'produto_id',
+        'status_solicitacao_id',
+        'ordem_compra_id',
+        'fornecedor_id',
+        'qtde',
+        'data_entrega',
+        'data_solicitacao',
+        'hora_solicitacao'
+    ];
+
     public static function listaSolicitacaoPorStatus($id_status)
     {
         return DB::table('solicitacaos')
