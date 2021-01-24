@@ -16,4 +16,5 @@ Route::resource('/produtolocalizacao', 'ProdutoLocalizacaoController');
 Route::resource('/entrada', 'EntradaController');
 Route::resource('/saida', 'SaidaController');
 Route::resource('/movimento', 'MovimentoController');
+Route::resource('/solicitacao', 'SolicitacaoController');
 
