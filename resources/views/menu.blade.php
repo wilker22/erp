@@ -68,7 +68,7 @@
             <li class="icones"><a href="" title="Recolher menu"><i class="fas fa-arrow-left ativo"></i></a></li>
             <h1 class="tt px-2"><b><i class="fas fa-cart-plus"></i> Compras</b></h1>
             <li><a href="{{ route('solicitacao.index') }}"> Solicitação</a></li>
-            <li><a href="index.php?link=18"> Cotação</a></li>
+            <li><a href="{{ route('cotacao.index') }}"> Cotação</a></li>
             <li><a href="index.php?link=19"> Ordem de compra</a></li>
         </ul>
     </nav>
