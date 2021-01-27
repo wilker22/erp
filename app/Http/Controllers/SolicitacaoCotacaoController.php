@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Solicitacao;
 use App\SolicitacaoCotacao;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,11 @@ class SolicitacaoCotacaoController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
-        SolicitacaoCotacao::create($req);
+        //dd($req);
+        $inseriu = SolicitacaoCotacao::create($req);
+        if($inseriu){
+            Solicitacao::where('id', $inseriu->solicitacao_id)->update(['status_solicitacao_id' => 2]);
+        }
         return redirect()->route('cotacao.create');
     }
 

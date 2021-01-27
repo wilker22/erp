@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cotacao;
 use App\Solicitacao;
+use App\SolicitacaoCotacao;
 use Illuminate\Http\Request;
 
 class CotacaoController extends Controller
@@ -32,8 +33,10 @@ class CotacaoController extends Controller
             $cotacao = Cotacao::create(['data_abertura' => date('Y-m-d')]);
         }
         $solicitacoes_abertas = Solicitacao::listaSolicitacaoPorStatus(1);
+        $solicitacoes = SolicitacaoCotacao::listaPorIdCotacao($cotacao->id);
+        //dd($solicitacoes);
 
-        return view('cotacao.create', compact('cotacao', 'solicitacoes_abertas'));
+        return view('cotacao.create', compact('cotacao', 'solicitacoes_abertas', 'solicitacoes'));
     }
 
     /**

@@ -12,6 +12,7 @@ class Solicitacao extends Model
         'produto_id',
         'status_solicitacao_id',
         'ordem_compra_id',
+        'ordem_producao_id',
         'fornecedor_id',
         'qtde',
         'data_entrega',

@@ -28,14 +28,13 @@
                                         <div class="rows">
                                             <div class="col-6">
                                                 <select class="form-campo" name="solicitacao_id" id="solicitacao_id">
-                                                    @foreach ($solicitacoes_abertas as $solicitacao)
-                                                     <option value="{{ $solicitacao->id }}">{{ $solicitacao->produto}}</option>
+                                                    @foreach ($solicitacoes_abertas as $abertas)
+                                                     <option value="{{ $abertas->id }}">{{ $abertas->produto}}</option>
                                                     @endforeach
                                                </select>
                                             </div>
-
                                             <div class="col-3">
-                                                <input type="hidden" name="contacao_id" value="{{ $cotacao->id }}">
+                                                <input type="hidden" name="cotacao_id" value="{{ $cotacao->id }}">
                                                 <input type="submit" class="btn btn-roxo width-100" value="Inserir" id="btnInserirSolicitacao">
                                             </div>
                                             <div class="col-3 px-2">
@@ -60,14 +59,18 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="lista_solicitacao">
-                                                 <tr>
-                                                        <td align="center">1</td>
-                                                        <td align="center">Panela cabo grande</td>
-                                                        <td align="center">Em andamento</td>
-                                                        <td align="center">2</td>
+
+                                                @foreach ($solicitacoes as $solicita)
+                                                    <tr>
+                                                        <td align="center">{{ $solicita->id }}</td>
+                                                        <td align="center">{{ $solicita->produto }}</td>
+                                                        <td align="center">{{ $solicita->status_solicitacao }}</td>
+                                                        <td align="center">{{ $solicita->qtde }}</td>
                                                         <td align="center"><a href="javascript:;" onclick="excluirFornecedorCotacao(4,1)" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i><!-- Excluir--></a>
                                                         </td>
-                                                </tr>
+                                                    </tr>
+                                                @endforeach
+
                                             </tbody>
                                         </table>
 

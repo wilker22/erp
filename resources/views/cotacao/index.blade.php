@@ -56,18 +56,17 @@
                                         </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cotacoes as $cotacao)
-                                    <tr>
-                                        <td align="center">{{ $cotacao->item }}</td>
-                                        <td align="center">{{ $cotacao->id}}</td>
-                                        <td align="left">{{ $produto->produto}}</td>
 
-                                        <td align="center"><span class="text-verde"><i class="fas fa-check"></i> {{ $produto->ativo }}</span></td>
+                                    <tr>
+                                        <td align="center">Alguma coisa</td>
+                                        <td align="center">Alguma coisa</td>
+                                        <td align="left">Alguma coisa</td>
+
+                                        <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Alguma coisa</span></td>
 
                                         <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
                                         <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
                                      </tr>
-                                    @endforeach
 
                                  <tr>
                                     <td align="center">1</td>
