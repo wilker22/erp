@@ -37,7 +37,7 @@ class SolicitacaoCotacaoController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
-        //dd($req);
+
         $inseriu = SolicitacaoCotacao::create($req);
         if($inseriu){
             Solicitacao::where('id', $inseriu->solicitacao_id)->update(['status_solicitacao_id' => 2]);

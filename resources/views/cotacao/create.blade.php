@@ -20,7 +20,7 @@
                                     <span class="d-inline-block"><i class="fas fa-arrow-right"></i> Solicitações </span>
                                 </div>
                                 <!-- form Solicitação -->
-                                <form name="addSolicitacao"  id="addSolicitacao" action="{{ route('solicitacaocotacao.store') }}" method="post">
+                                <form action="{{ route('solicitacaocotacao.store') }}" name="addSolicitacao"  id="addSolicitacao" method="post">    
                                     @csrf
                                     <div class="col-12 mb-3">
 

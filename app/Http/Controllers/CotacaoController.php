@@ -34,6 +34,7 @@ class CotacaoController extends Controller
         }
         $solicitacoes_abertas = Solicitacao::listaSolicitacaoPorStatus(1);
         $solicitacoes = SolicitacaoCotacao::listaPorIdCotacao($cotacao->id);
+
         //dd($solicitacoes);
 
         return view('cotacao.create', compact('cotacao', 'solicitacoes_abertas', 'solicitacoes'));
