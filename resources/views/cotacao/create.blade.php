@@ -20,7 +20,7 @@
                                     <span class="d-inline-block"><i class="fas fa-arrow-right"></i> Solicitações </span>
                                 </div>
                                 <!-- form Solicitação -->
-                                <form action="{{ route('solicitacaocotacao.store') }}" name="addSolicitacao"  id="addSolicitacao" method="post">    
+                                <form action="{{ route('solicitacaocotacao.store') }}" name="addSolicitacao"  id="addSolicitacao" method="post">
                                     @csrf
                                     <div class="col-12 mb-3">
 
@@ -60,16 +60,18 @@
                                             </thead>
                                             <tbody id="lista_solicitacao">
 
-                                                @foreach ($solicitacoes as $solicita)
+                                                @foreach ($solicitacoes as $s)
                                                     <tr>
-                                                        <td align="center">{{ $solicita->id }}</td>
-                                                        <td align="center">{{ $solicita->produto }}</td>
-                                                        <td align="center">{{ $solicita->status_solicitacao }}</td>
-                                                        <td align="center">{{ $solicita->qtde }}</td>
+                                                        <td align="center">{{ $s->id }}</td>
+                                                        <td align="center">{{ $s->produto }}</td>
+                                                        <td align="center">{{ $s->status_solicitacao }}</td>
+                                                        <td align="center">{{ $s->qtde }}</td>
                                                         <td align="center"><a href="javascript:;" onclick="excluirFornecedorCotacao(4,1)" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i><!-- Excluir--></a>
                                                         </td>
                                                     </tr>
+
                                                 @endforeach
+
 
                                             </tbody>
                                         </table>
