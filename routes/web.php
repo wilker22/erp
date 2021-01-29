@@ -17,6 +17,7 @@ Route::resource('/entrada', 'EntradaController');
 Route::resource('/saida', 'SaidaController');
 Route::resource('/movimento', 'MovimentoController');
 Route::resource('/solicitacaocotacao', 'SolicitacaoCotacaoController');
+Route::get('/solicitacaocotacao/excluir/{id}/{idSolicitacao}', 'SolicitacaoCotacaoController@excluir')->name('solicitacaocotacao.excluir');
 Route::resource('/solicitacao', 'SolicitacaoController');
 Route::resource('/cotacao', 'CotacaoController');
 

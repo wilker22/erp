@@ -85,8 +85,10 @@ class SolicitacaoCotacaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function excluir($id, $id_solicitacao)
     {
-        //
+        SolicitacaoCotacao::where('id', $id)->delete();
+        Solicitacao::where('id', $id_solicitacao)->update(['status_solicitacao_id' => 1]);
+        return redirect()->route('cotacao.create');
     }
 }

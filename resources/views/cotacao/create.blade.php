@@ -66,8 +66,11 @@
                                                         <td align="center">{{ $s->produto }}</td>
                                                         <td align="center">{{ $s->status_solicitacao }}</td>
                                                         <td align="center">{{ $s->qtde }}</td>
-                                                        <td align="center"><a href="javascript:;" onclick="excluirFornecedorCotacao(4,1)" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i><!-- Excluir--></a>
+
+                                                        <td align="center">
+                                                            <a  href=" {{ route('solicitacaocotacao.excluir', ['id' => $s->id, 'idSolicitacao' => $s->solicitacao_id ])}} " onclick="return confirm('Confirma Exclusão?')" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i></a>
                                                         </td>
+
                                                     </tr>
 
                                                 @endforeach

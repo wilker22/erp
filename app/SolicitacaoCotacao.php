@@ -19,7 +19,7 @@ class SolicitacaoCotacao extends Model
                     ->select(
                         'solicitacao_cotacaos.*',
                         'solicitacaos.qtde',
-                        'status_solicitacaos.*',
+                        'status_solicitacaos.status_solicitacao',
                         'produtos.produto',
                         'produtos.id as id_produto'
                     )->get();

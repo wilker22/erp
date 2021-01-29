@@ -30,7 +30,7 @@ class CotacaoController extends Controller
         $cotacao = Cotacao::where('status_cotacao_id', 1)->first();
 
         if(!$cotacao){
-            $cotacao = Cotacao::create(['data_abertura' => date('Y-m-d')]);
+            $cotacao = Cotacao::create(['data_abertura' => date('Y-m-d'), 'status_cotacao_id' => 1]);
         }
         $solicitacoes_abertas = Solicitacao::listaSolicitacaoPorStatus(1);
         $solicitacoes = SolicitacaoCotacao::listaPorIdCotacao($cotacao->id);
