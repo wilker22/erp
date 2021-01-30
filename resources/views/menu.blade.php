@@ -69,7 +69,7 @@
             <h1 class="tt px-2"><b><i class="fas fa-cart-plus"></i> Compras</b></h1>
             <li><a href="{{ route('solicitacao.index') }}"> Solicitação</a></li>
             <li><a href="{{ route('cotacao.index') }}"> Cotação</a></li>
-            <li><a href="index.php?link=19"> Ordem de compra</a></li>
+            <li><a href="{{ route('ordemcompra.index') }}"> Ordem de compra</a></li>
         </ul>
     </nav>
 

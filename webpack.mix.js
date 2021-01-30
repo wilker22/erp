@@ -49,6 +49,10 @@ mix
 ], "public/assets/js/js_saida.js")
 
 .scripts([
+    "resources/views/assets/js/js_item_ordem_compra.js"
+], "public/assets/js/js_item_ordem_compra.js")
+
+.scripts([
     "resources/views/assets/js/grafico.js"
 ], "public/assets/js/grafico.js")
 
