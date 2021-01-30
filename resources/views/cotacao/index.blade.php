@@ -47,67 +47,29 @@
                         <table cellpadding="0" cellspacing="0" id="dataTable" width="100%">
                                 <thead>
                                         <tr>
-                                           <th align="center">item</th>
+
                                            <th align="center">Id</th>
-                                           <th align="center" width="50%">Nome</th>
-                                           <th align="center">Ativo</th>
+                                           <th align="center" width="50%">Status</th>
+                                           <th align="center">Data Abertura</th>
+                                           <th align="center">Data Encerramento</th>
                                            <th align="center">Editar</th>
                                            <th align="center">Excluir</th>
                                         </tr>
                                 </thead>
                                 <tbody>
-
+                                    @foreach ($cotacoes as $cotacao)
                                     <tr>
-                                        <td align="center">Alguma coisa</td>
-                                        <td align="center">Alguma coisa</td>
-                                        <td align="left">Alguma coisa</td>
-
-                                        <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Alguma coisa</span></td>
+                                        <td align="center">{{ $cotacao->id }}</td>
+                                        <td align="center">{{ $cotacao->status_cotacao }}</td>
+                                        <td align="left">{{ $cotacao->data_abertura }}</td>
+                                        <td align="left">{{ $cotacao->data_encerramento }}</td>
 
                                         <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
                                         <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
                                      </tr>
-
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="left">Panela</td>
-                                    <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Sim</span></td>
-
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
-                                 </tr>
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="left">Panela</td>
-                                    <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Sim</span></td>
-
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
-                                 </tr>
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="left">Panela</td>
-                                    <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Sim</span></td>
-
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
-                                 </tr>
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="left">Panela</td>
-                                    <td align="center"><span class="text-verde"><i class="fas fa-check"></i> Sim</span></td>
-
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Editar</a>                              </td>
-                                    <td align="center"><a href="" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i> Excluir</a>                                </td>
-                                 </tr>
-
-
-                            </tbody>
-                                    </table>
+                                    @endforeach
+                                </tbody>
+                            </table>
 
                             </div>
 

@@ -6,7 +6,7 @@
     <div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
                             <span class="d-flex center-middle"><i class="far fa-list-alt mr-1"></i> Cotação: {{ $cotacao->id }} </span>
                             <div>
-                                <a href="index.php?link=3" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-check"></i> Finalizar cotação</a>
+                                <a href="{{ route('cotacao.finalizar', $cotacao->id)}}" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-check"></i> Finalizar cotação</a>
                             </div>
                     </div>
     <div class="conteudo-fluido">
