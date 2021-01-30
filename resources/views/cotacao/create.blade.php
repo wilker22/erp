@@ -90,31 +90,37 @@
                                 <div class="h5 bg-title d-inline-block width-100 py-1 px-3 text-branco text-uppercase">
                                     <span class="d-inline-block"><i class="fas fa-arrow-right"></i> Fornecedores </span>
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <label class="text-label d-block">Fornecedores</label>
-                                    <div class="rows">
-                                        <div class="col-6">
-                                            <select class="form-campo" name="id_contato" id="id_contato">
-                                                <option value="">Escolha uma Opção</option>
-                                                <option value="1">	Manoel Jailton </option><option value="3">	Fornecedor 2 </option><option value="4">	Fornecedor3 </option>                                        </select>
-                                        </div>
-                                        <div class="col-3">
-                                            <input type="hidden" id="id_produto" name="id_produto">
-                                            <input type="button" class="btn btn-roxo width-100" value="Inserir" id="btnInserirFornecedor">
-                                        </div>
 
-                                        <div class="col-3 px-2">
-                                            <a href="#janela2" rel="modal" class="btn btn-azul width-100">Múltiplos</a>
+                                <!-- form Fornecedores -->
+                                <form action="{{ route('fornecedorcotacao.store') }}" name="addFornecedor"  id="addSolicitacao" method="post">
+                                    @csrf
+                                        <div class="col-12 mb-3">
+                                            <label class="text-label d-block">Fornecedores</label>
+                                            <div class="rows">
+                                                <div class="col-6">
+                                                    <select class="form-campo" name="fornecedor_id" id="fornecedor_id">
+                                                        @foreach ($fornecedores as $fornecedor)
+                                                            <option value="{{ $fornecedor->id }}">{{ $fornecedor->nome}}</option>
+                                                        @endforeach
+                                                </div>
+                                                <div class="col-3">
+                                                    <input type="hidden" id="cotacao_id" value="{{ $cotacao->id }}" name="cotacao_id">
+                                                    <input type="submit" class="btn btn-roxo width-100" value="Inserir" id="btnInserirFornecedor">
+                                                </div>
+
+                                                <div class="col-3 px-2">
+                                                    <a href="#janela2" rel="modal" class="btn btn-azul width-100">Múltiplos</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                </form>
 
                                 <div class="tabela-responsiva sm tborder px-3 pb-3">
                                     <div class="rolagem-tabela">
                                         <table cellpadding="0" cellspacing="0" class="mb-0 table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th align="center">Item</th>
+
                                                     <th align="center">ID</th>
                                                     <th align="center">Nome</th>
                                                     <th align="center">Email</th>
@@ -124,15 +130,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="lista_fornecedor">
-                                               <tr class="status-bg">
-                                                        <td align="center">1</td>
-                                                        <td align="center">1</td>
-                                                        <td align="center">Manoel Jailton</td>
-                                                        <td align="center">mjailton@gmail.com</td>
-                                                        <td align="center"></td>
-                                                        <td align="center"><a href="javascript:;" onclick="excluirFornecedorCotacao(4,1)" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i><!-- Excluir--></a>
-                                                        </td>
-                                                </tr>
+                                                @foreach ($fornecedores_cotacao as $fornece)
+                                                        <tr class="status-bg">
+
+                                                            <td align="center">{{ $fornece->id_contato }}</td>
+                                                            <td align="center">{{ $fornece->nome }}</td>
+                                                            <td align="center">{{ $fornece->email }}</td>
+                                                            <td align="center">{{ $fornece->fone }}</td>
+                                                            <td align="center">
+                                                                <a  href=" {{ route('fornecedorcotacao.excluir', $fornece->id) }} " onclick="return confirm('Confirma Exclusão?')" class="link-vermelho"><i class="fas fa-trash-alt h5 mb-0"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                @endforeach
+
 
                                             </tbody>
                                         </table>

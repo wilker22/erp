@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Contato;
-use App\Cotacao;
 use App\FornecedorCotacao;
-use App\Solicitacao;
-use App\SolicitacaoCotacao;
 use Illuminate\Http\Request;
 
-class CotacaoController extends Controller
+class FornecedorCotacaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +15,7 @@ class CotacaoController extends Controller
      */
     public function index()
     {
-        $cotacoes = Cotacao::all();
-        return view('cotacao.index', compact('cotacoes'));
+        //
     }
 
     /**
@@ -29,16 +25,7 @@ class CotacaoController extends Controller
      */
     public function create()
     {
-        $cotacao = Cotacao::where('status_cotacao_id', 1)->first();
-
-        if(!$cotacao){
-            $cotacao = Cotacao::create(['data_abertura' => date('Y-m-d'), 'status_cotacao_id' => 1]);
-        }
-        $solicitacoes_abertas = Solicitacao::listaSolicitacaoPorStatus(1);
-        $solicitacoes = SolicitacaoCotacao::listaPorIdCotacao($cotacao->id);
-        $fornecedores = Contato::where('eh_fornecedor', 'S')->get();
-        $fornecedores_cotacao = FornecedorCotacao::listaPorIdCotacao($cotacao->id);
-        return view('cotacao.create', compact('cotacao', 'solicitacoes_abertas', 'solicitacoes', 'fornecedores', 'fornecedores_cotacao'));
+        //
     }
 
     /**
@@ -49,7 +36,15 @@ class CotacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $req = $request->all();
+        $fornecedor = FornecedorCotacao::where('fornecedor_id' , $req['fornecedor_id'])
+                                        ->where('cotacao_id' , $req['cotacao_id'])->first();
+
+        if(!$fornecedor){
+            FornecedorCotacao::create($req);
+        }
+
+        return redirect()->route('cotacao.create');
     }
 
     /**
@@ -95,5 +90,12 @@ class CotacaoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function excluir($id)
+    {
+        FornecedorCotacao::where('id', $id)->delete();
+
+        return redirect()->route('cotacao.create');
     }
 }

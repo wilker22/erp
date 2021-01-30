@@ -20,4 +20,7 @@ Route::resource('/solicitacaocotacao', 'SolicitacaoCotacaoController');
 Route::get('/solicitacaocotacao/excluir/{id}/{idSolicitacao}', 'SolicitacaoCotacaoController@excluir')->name('solicitacaocotacao.excluir');
 Route::resource('/solicitacao', 'SolicitacaoController');
 Route::resource('/cotacao', 'CotacaoController');
+Route::resource('/fornecedorcotacao', 'FornecedorCotacaoController');
+Route::get('/fornecedorcotacao/excluir/{id}', 'FornecedorCotacaoController@excluir')->name('fornecedorcotacao.excluir');
+
 
