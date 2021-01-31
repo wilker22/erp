@@ -106,20 +106,22 @@
     											  <th align="center" width="70">Excluir</th>
     											</tr>
                                     </thead>
-                                    <tbody>
-
+                                    <tbody id="lista_item_ordem_compras">
+                                    @foreach ($itens as $item)
                                     <tr>
-									  <td align="center">1</td>
-									  <td align="left" width="290">teste</td>
-									  <td align="center">2</td>
-									  <td align="center">100</td>
-									  <td align="center">200</td>
-                					  <td align="center"><a href="#"   class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i></a>                                </td>
-      								</tr>
+                                        <td align="center">{{ $item->id }}</td>
+                                        <td align="left" width="290">{{ $item->produto }}</td>
+                                        <td align="center">{{ $item->qtde }}</td>
+                                        <td align="center">{{ $item->valor }}</td>
+                                        <td align="center">{{ $item->subtotal }}</td>
+                                        <td align="center"><a href="#"   class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i></a>                                </td>
+                                        </tr>
 
-									 <tr>
-										 <td align="right" colspan="6"><b>Total:</b> <span class="text-verde minimo-font" id="total_entrada">R$ 100</span></td>
-									</tr>
+                                       <tr>
+                                           <td align="right" colspan="6"><b>Total:</b> <span class="text-verde minimo-font" id="total_entrada">R$ {{ $ordem->valor_total }}</span></td>
+                                      </tr>
+                                    @endforeach
+
                                     </tbody>
                             </table>
 

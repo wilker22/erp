@@ -91,7 +91,7 @@ function lista_item_ordem_compras(data){
     for(var i in data){
         total_item_ordem_compra += parseFloat(data[i].subtotal);
         html += '<td align="center">' + data[i].id + '</td>' +
-                '<td align="center">' + data[i].data_emissao + '</td>' +
+                '<td align="center">' + data[i].id + '</td>' +
                 '<td align="center">' + data[i].produto + '</td>' +
                 '<td align="center">' + data[i].qtde + '</td>' +
                 '<td align="center">' + data[i].valor + '</td>' +

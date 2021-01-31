@@ -14,7 +14,7 @@
 
         <script>
             var base_url = "{{ asset('')}}";
-            var _token = "{{csrf_token()}}";
+            var _token = "{{ csrf_token() }}";
         </script>
 
 	</head>
