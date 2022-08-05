@@ -25,9 +25,9 @@ class ProdutoRequest extends FormRequest
     {
         return [
             "produto" => 'required',
-            "id_categoria" => 'required',
-            "id_unidade" => 'required',
-            "prreco" => 'required'
+            "categoria_id" => 'required',
+            "unidade_id" => 'required',
+            "preco" => 'required'
 
         ];
     }

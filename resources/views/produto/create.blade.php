@@ -20,7 +20,7 @@
         <div class="rows p-4">
                  <div class="col-4">
                                     <div class="py-1 px-2 mt-3 border text-center">
-                                            <img src="{{ asset('storage/upload/semproduto.png') }}" class="img-fluido opaco">
+                                            <img src="{{ asset('storage/upload/no_image.jpg') }}" class="img-fluido opaco">
                                     </div>
                             </div>
                             <div class="col-8 px-2">
@@ -33,7 +33,7 @@
 
                                             <label class="text-label">Categoria</label>
 
-                                            <select class="form-campo" name="id_categoria">
+                                            <select class="form-campo" name="categoria_id">
 
                                                 @foreach ($categorias as $categoria)
                                                     <option value="{{ $categoria->id }}">{{ $categoria->categoria }}</option>
@@ -44,7 +44,7 @@
 
                                     <div class="col-6 mb-3">
                                             <label class="text-label">Unidade</label>
-                                            <select class="form-campo" name="id_unidade">
+                                            <select class="form-campo" name="unidade_id">
                                                 @foreach ($unidades as $unidade)
                                                     <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
                                                 @endforeach

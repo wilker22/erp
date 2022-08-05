@@ -52,8 +52,8 @@ class ProdutoController extends Controller
 
         $produto = new Produto();
         $produto->produto = $request->input('produto');
-        $produto->id_categoria = $request->input('id_categoria');
-        $produto->id_unidade = $request->input('id_unidade');
+        $produto->categoria_id = $request->input('categoria_id');
+        $produto->unidade_id = $request->input('unidade_id');
         $produto->imagem = $nome_imagem;
         $produto->preco = $request->input('preco');
         $produto->ativo = $request->input('ativo');
