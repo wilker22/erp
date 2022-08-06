@@ -39,7 +39,6 @@ class ContatoController extends Controller
     {
         Contato::create($request->all());
 
-
         return redirect()->route('contato.index');
     }
 

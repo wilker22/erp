@@ -38,9 +38,11 @@
                         <div class="col-12 mb-4">
                             <span class="h5 d-block text-upp">Marque os tipos desejados:</span>
                             <div class="rows itens-check px-3">
-                            <div><input type="checkbox" name="eh_cliente" {{ isset($contato->eh_cliente) && $contato->eh_cliente == 'S' ? 'checked' : '' }} class="form-control tipo" id="contato" value="S"> <label class="p-2 mr-1" for="contato"><i class="fas fa-user"></i> Contato</label>
+                            <div>
+                                <input type="checkbox" name="eh_cliente" {{ isset($contato->eh_cliente) && $contato->eh_cliente == 'S' ? 'checked' : '' }} class="form-control tipo" id="contato" value="S"> <label class="p-2 mr-1" for="contato"><i class="fas fa-user"></i> Contato</label>
                              </div>
-                             <div><input type="checkbox" name="eh_fornecedor" {{ isset($contato->eh_fornecedor) && $contato->eh_fornecedor == 'S' ? 'checked' : '' }} class="form-control tipo" id="fornecedor" value="S"> <label class="p-2 mr-1" for="fornecedor"><i class="fas fa-cart-arrow-down"></i> Fornecedor</label>
+                             <div>
+                                <input type="checkbox" name="eh_fornecedor" {{ isset($contato->eh_fornecedor) && $contato->eh_fornecedor == 'S' ? 'checked' : '' }} class="form-control tipo" id="fornecedor" value="S"> <label class="p-2 mr-1" for="fornecedor"><i class="fas fa-cart-arrow-down"></i> Fornecedor</label>
                              </div>
 
                              <div><input type="checkbox" name="eh_transportador" {{ isset($contato->eh_transportador) && $contato->eh_transportador == 'S' ? 'checked' : '' }} class="form-control tipo" id="transportador" value="S"> <label class="p-2" for="transportador"><i class="fas fa-truck"></i> Transportador</label>

@@ -35,7 +35,11 @@ class ProdutoRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            
+            "produto" => 'Campo PRODUTO não pode ficar vazio!',
+            "categoria_id" => 'Campo CATEGORIA não pode ficar vazio!',
+            "unidade_id" => 'Campo UNIDADE não pode ficar vazio!',
+            "preco" => 'Campo PREÇO não pode ficar vazio!'
         ];
     }
 }
