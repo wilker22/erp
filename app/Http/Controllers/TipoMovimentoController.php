@@ -99,10 +99,10 @@ class TipoMovimentoController extends Controller
     {
         $tipomovimento = TipoMovimento::find($id);
         if(!$tipomovimento){
-            return redirect()->back()->with('error', "Ocorreu erro ao Atualizar!");
+            return redirect()->back()->with('error', "Ocorreu erro ao Remover!");
         }
         $tipomovimento->delete();
 
-        return redirect()->route('tipomovimento.index')->with('success', "Atualizado com sucesso");
+        return redirect()->route('tipomovimento.index')->with('success', "Removido com sucesso");
     }
 }
