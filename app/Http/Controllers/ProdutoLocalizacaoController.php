@@ -27,11 +27,11 @@ class ProdutoLocalizacaoController extends Controller
     public function listaPorProduto($id_produto)
     {
         $lista = ProdutoLocalizacao::where('produto_id', $id_produto)
-                        ->join('localizacaos',
-                               'produto_localizacaos.localizacao_id',
-                               '=',
-                               'localizacaos.id')->get();
-                      //  dd($lista);
+                                   ->join('localizacaos',
+                                          'produto_localizacaos.localizacao_id',
+                                          '=',
+                                          'localizacaos.id')->get();
+                        dd($lista);
         return response()->json($lista);
 
     }

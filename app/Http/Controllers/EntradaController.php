@@ -19,6 +19,7 @@ class EntradaController extends Controller
     public function index()
     {
         $lista = Entrada::lista(date('Y-m-d'));
+        
         $soma = Entrada::total(date('Y-m-d'));
         return view('entrada.index', compact('lista', 'soma'));
     }
@@ -116,4 +117,6 @@ class EntradaController extends Controller
     {
         //
     }
+
+   
 }
