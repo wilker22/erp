@@ -8,7 +8,7 @@
                        <div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
                         <span class="d-flex center-middle"><i class="far fa-list-alt mr-1"></i> Lista de ordem de compra </span>
                             <div>
-                                <a href="index.php?link=21" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
+                                <a href="{{route('cotacao.create')}}" class="btn btn-verde mx-1 d-inline-block"><i class="fas fa-plus-circle"></i> Adicionar novo</a>
                                 <a href="" class="btn btn-laranja filtro mx-1 d-inline-block"><i class="fas fa-filter"></i> Filtrar</a>
                             </div>
                         </div>
