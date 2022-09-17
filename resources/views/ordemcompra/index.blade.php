@@ -62,69 +62,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">Manoel Jailton</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">R$ 17,50</td>
-                                    <td align="center"><span class="status status-amarelo">Aguardando Aprovação</span></td>
-                                    <td align="center">
-                                        <a href="index.php?link=32" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Aprovar</a>
-                                    </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">Manoel Jailton</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">R$ 17,50</td>
-                                    <td align="center"><span class="status status-verde">Autorizado</span></td>
-                                    <td align="center">
-                                        <a href="index.php?link=20" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Detalhes</a>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">Manoel Jailton</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">R$ 17,50</td>
-                                    <td align="center"><span class="status status-vermelho">Autorizado</span></td>
-                                    <td align="center">
-                                        <a href="index.php?link=20" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Detalhes</a>
-                                    </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">Manoel Jailton</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">R$ 17,50</td>
-                                    <td align="center"><span class="status status-azul">Autorizado</span></td>
-                                    <td align="center">
-                                        <a href="index.php?link=20" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Detalhes</a>
-                                    </td>
-                                 </tr>
-
-                                 <tr>
-                                    <td align="center">1</td>
-                                    <td align="center">1</td>
-                                    <td align="center">Manoel Jailton</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">15/09/2019</td>
-                                    <td align="center">R$ 17,50</td>
-                                    <td align="center"><span class="status status-roxo">Autorizado</span></td>
-                                    <td align="center">
-                                        <a href="index.php?link=20" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Detalhes</a>
-                                    </td>
-                                 </tr>
+                                    @foreach ($ordens as $ordem )
+                                    <tr>
+                                        <td align="center">{{ $ordem->id }}</td>
+                                        <td align="center">{{ $ordem->cotacao_id }}</td>
+                                        <td align="center">{{ $ordem->fornecedor_id }}</td>
+                                        <td align="center">1{{ $ordem->data_emissao }}</td>
+                                        <td align="center">{{ $ordem->data_aprovacao }}</td>
+                                        <td align="center">{{ $ordem->valor_total }}</td>
+                                        <td align="center"><span class="status status-amarelo">{{ $ordem->status_ordem_compra_id }}</span></td>
+                                        <td align="center">
+                                            <a href="index.php?link=32" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Aprovar</a>
+                                        </td>
+                                     </tr>  
+                                    @endforeach
+                                
 
                             </tbody>
                                     </table>
