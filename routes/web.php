@@ -17,7 +17,7 @@ use App\Http\Controllers\SolicitacaoController;
 use App\Http\Controllers\SolicitacaoCotacaoController;
 use App\Http\Controllers\TipoMovimentoController;
 use App\Http\Controllers\UnidadeController;
-
+use App\OrdemCompra;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
@@ -42,5 +42,7 @@ Route::resource('/fornecedorcotacao', FornecedorCotacaoController::class);
 Route::get('/fornecedorcotacao/excluir/{id}', [FornecedorCotacaoController::class,'excluir'])->name('fornecedorcotacao.excluir');
 Route::resource('/ordemcompra', OrdemCompraController::class);
 Route::resource('/itemordemcompra', ItemOrdemCompraController::class);
+Route::get('/ordemcompra/finalizar/{id}', [OrdemCompra::class,'finalizar'])->name('ordemcompra.finalizar');
+Route::get('/ordemcompra/aprovar/{id}', [OrdemCompra::class,'aprovar'])->name('ordemcompra.aprovar');
 
 

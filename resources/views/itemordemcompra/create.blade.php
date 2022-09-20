@@ -9,7 +9,7 @@
             <div class="caixa">
 				<div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
 					<span class="d-flex center-middle"><i class="fas fa-search mr-1"></i> Ordem de Compra: 2 </span>
-                    <a href="<?php echo "pedido" ?>" class="btn btn-verde btn-pequeno float-right "><i class="fas fa-arrow-left mb-0"></i> Voltar</a>
+                    <a href="{{route('ordemcompra.index')}}" class="btn btn-verde btn-pequeno float-right "><i class="fas fa-arrow-left mb-0"></i> Voltar</a>
                 </div>
                 </div>
                     <div class="py-4 px-4">
@@ -39,7 +39,7 @@
                                             <div class="px-3 py-4 border radius-4 width-100">
                                                     <i class="fab fa-bitcoin pequeno-font float-left mr-1 text-padrao"></i>
                                                     <small>Total</small>
-                                                    <h4>R$ {{ $ordem->valor_total }}</h4>
+                                                    <h4>R$ <span id="total_ordem">{{ $ordem->valor_total }}</span> </h4>
                                             </div>
                                        </div>
                                        <div class="col d-flex">
@@ -114,7 +114,7 @@
                                         <td align="center">{{ $item->qtde }}</td>
                                         <td align="center">{{ $item->valor }}</td>
                                         <td align="center">{{ $item->subtotal }}</td>
-                                        <td align="center"><a href="#"   class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i></a>                                </td>
+                                        <td align="center"><a href="javascript:;" onclick="excluir_item_ordem_compra(this)" data-id="{{$item->id}}" class="d-inline-block btn btn-outline-vermelho btn-pequeno"><i class="fas fa-trash-alt"></i></a>                                </td>
                                         </tr>
 
                                        <tr>
@@ -131,7 +131,7 @@
                         <div class="caixa-rodape">
 							<a href="" class="btn btn-vermelho btn-medio d-inline-block">Excluir</a>
 							<input type="hidden" value="" name="id_ordem" />
-							<input type="submit" value="Aprovar Ordem de Compra" class="btn btn-verde btn-medio d-inline-block" />
+							<a href="{{ route('ordemcompra.finalizar', $ordem->id)}}" class="btn btn-verde btn-medio d-inline-block">Finalizar</a>
 						</div>
                     </div>
 

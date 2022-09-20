@@ -15,7 +15,7 @@ class OrdemCompraController extends Controller
      */
     public function index()
     {
-        $ordens = OrdemCompra::all();
+        $ordens = OrdemCompra::lista();
         return view('ordemcompra.index', compact('ordens'));
     }
 
@@ -90,5 +90,17 @@ class OrdemCompraController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function finalizar($id_ordem)
+    {
+        OrdemCompra::where('id', $id_ordem)->update(['finalizada' => 'S', 'status_ordem_compra_id => 2']);
+        return redirect()->route('ordemcompra');
+    }
+
+    public function aprovar($id_ordem)
+    {
+        OrdemCompra::where('id', $id_ordem)->update(['finalizada' => 'S', 'status_ordem_compra_id => 2']);
+        return redirect()->route('ordemcompra');
     }
 }

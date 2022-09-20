@@ -66,14 +66,28 @@
                                     <tr>
                                         <td align="center">{{ $ordem->id }}</td>
                                         <td align="center">{{ $ordem->cotacao_id }}</td>
-                                        <td align="center">{{ $ordem->fornecedor_id }}</td>
-                                        <td align="center">1{{ $ordem->data_emissao }}</td>
+                                        <td align="center">{{ $ordem->nome }}</td>
+                                        <td align="center">{{ $ordem->data_emissao }}</td>
                                         <td align="center">{{ $ordem->data_aprovacao }}</td>
                                         <td align="center">{{ $ordem->valor_total }}</td>
-                                        <td align="center"><span class="status status-amarelo">{{ $ordem->status_ordem_compra_id }}</span></td>
-                                        <td align="center">
-                                            <a href="index.php?link=32" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Aprovar</a>
-                                        </td>
+                                        <td align="center"><span class="status status-amarelo">{{ $ordem->status_ordem_compra }}</span></td>
+                                        @if($ordem->status_ordem_compra_id == 1)
+                                            <td align="center">
+                                                <a href="{{route('ordemcompra.edit', $ordem->id)}}" 
+                                                class="d-inline-block btn btn-outline-roxo btn-pequeno">
+                                                <i class="fas fa-edit"></i> Finalizar
+                                                </a>
+                                            </td>
+                                        @elseif($ordem->status_ordem_compra_id == 2)
+                                            <td align="center">
+                                                <a href="{{route('ordemcompra.aprovar', $ordem->id)}}" 
+                                                class="d-inline-block btn btn-outline-roxo btn-pequeno">
+                                                <i class="fas fa-edit"></i> Aprovar
+                                                </a>
+                                            </td>
+                                        @endif
+                                       
+                                        
                                      </tr>  
                                     @endforeach
                                 
