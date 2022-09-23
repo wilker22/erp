@@ -1,9 +1,10 @@
+
+
 $.ajaxSetup({
     headers: {
-        'X-CSRF-TOKEN': _token
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
 
 
 $(function () {
@@ -11,7 +12,6 @@ $(function () {
         var id = $("#id_produto").val();
         var preco = $("#preco").val();
         var qtde = $("#qtde").val();
-
 
         $.ajax({
             url: base_url + 'itemordemcompra' + id,

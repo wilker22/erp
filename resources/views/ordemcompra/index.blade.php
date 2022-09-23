@@ -62,7 +62,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($ordens as $ordem )
+                                    @foreach ($lista as $ordem )
                                     <tr>
                                         <td align="center">{{ $ordem->id }}</td>
                                         <td align="center">{{ $ordem->cotacao_id }}</td>
@@ -73,7 +73,7 @@
                                         <td align="center"><span class="status status-amarelo">{{ $ordem->status_ordem_compra }}</span></td>
                                         @if($ordem->status_ordem_compra_id == 1)
                                             <td align="center">
-                                                <a href="{{route('ordemcompra.edit', $ordem->id)}}" 
+                                                <a href="{{route('itemordemcompra.edit', $ordem->id)}}" 
                                                 class="d-inline-block btn btn-outline-roxo btn-pequeno">
                                                 <i class="fas fa-edit"></i> Finalizar
                                                 </a>

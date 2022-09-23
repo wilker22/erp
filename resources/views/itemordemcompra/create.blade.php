@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="caixa">
 				<div class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
-					<span class="d-flex center-middle"><i class="fas fa-search mr-1"></i> Ordem de Compra: 2 </span>
+					<span class="d-flex center-middle" id="id_ordem"><i class="fas fa-search mr-1"></i> Ordem de Compra: {{$ordem->id}} </span>
                     <a href="{{route('ordemcompra.index')}}" class="btn btn-verde btn-pequeno float-right "><i class="fas fa-arrow-left mb-0"></i> Voltar</a>
                 </div>
                 </div>
@@ -149,5 +149,6 @@
 <script>
     var id_ordem = {{ $ordem->id }}
 </script>
+
 
   @endsection

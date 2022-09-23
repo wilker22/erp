@@ -26,6 +26,7 @@ class  ItemOrdemCompraController extends Controller
      */
     public function create()
     {
+        
         return view('itemordemcompra.create');
     }
 
@@ -38,7 +39,8 @@ class  ItemOrdemCompraController extends Controller
     public function store(Request $request)
     {
         $req = $request->all();
-       // dd($req);
+       
+        
         $item = ItemOrdemCompra::where("ordem_compra_id", $req['ordem_compra_id'])
                             ->where("produto_id", $req['produto_id']);
         if(!$item){
@@ -69,10 +71,11 @@ class  ItemOrdemCompraController extends Controller
      */
     public function edit($id)
     {
+        
         $itens = ItemOrdemCompra::listaPorIdOrdemCompra($id);
         
         $ordem = OrdemCompra::getOrdemCompra($id);
-        
+         
         return view('itemordemcompra.create', compact('ordem', 'itens'));
     }
 
